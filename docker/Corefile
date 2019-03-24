@@ -1,0 +1,12 @@
+.:53 {
+    prometheus 0.0.0.0:9153
+    bind 0.0.0.0 
+    hosts /hosts {
+      log
+      errors
+      fallthrough
+    }
+
+    log
+    proxy . {$DNS_SERVER1} {$DNS_SERVER2}
+}
